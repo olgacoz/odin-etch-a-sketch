@@ -7,13 +7,12 @@
 #container {
   width: 960px;
   height: 960px;
-  background-color: gray;
+  background-color: white;
   display: flex;
   flex-direction: column;
 }
 
 .square {
-  background-color: blue;
   border: 1px solid black;
 }
 
