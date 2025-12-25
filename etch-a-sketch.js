@@ -10,19 +10,15 @@ function drawSquareGrid(squaresPerRow) {
   let squareWidth = containerWidth / squaresPerRow;
 
   for (let i = 0; i < squaresPerRow; i++) {
-    // create a div with class row
     const row = document.createElement('div');
     row.classList.add('row');
 
     for (let j = 0; j < squaresPerColumn; j++) {
-      // create a div with class square
       const square = document.createElement('div');
       square.classList.add('square');
 
-      // set the width and height of square
       square.style.width = `${squareWidth}px`;
       square.style.height = `${squareWidth}px`;
-
       row.appendChild(square);
     }
     container.appendChild(row);
