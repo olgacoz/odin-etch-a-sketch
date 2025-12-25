@@ -8,12 +8,12 @@ const containerWidth = container.offsetWidth;
 // find square width and height
 let squareWidth = containerWidth / squaresPerRow;
 
-for (let i = 0; i < squaresPerColumn; i++) {
+for (let i = 0; i < squaresPerRow; i++) {
     // create a div with class row
     const row = document.createElement('div');
     row.classList.add('row');
 
-    for (let i = 0; i < squaresPerRow; i++) {
+    for (let i = 0; i < squaresPerColumn; i++) {
         // create a div with class square
         const square = document.createElement('div');
         square.classList.add('square');
