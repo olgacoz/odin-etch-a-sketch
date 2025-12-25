@@ -1,12 +1,13 @@
 const container = document.querySelector('#container');
-// get the width of container
-const containerWidth = container.offsetWidth;
+const containerWidth = container.offsetWidth; // get container width
 
 drawSquareGrid(16);
+container.addEventListener('mouseover', colorSquare);
 
 function drawSquareGrid(squaresPerRow) {
   const squaresPerColumn = squaresPerRow;
-  // find square width and height
+  
+  // find width and height of square
   let squareWidth = containerWidth / squaresPerRow;
 
   for (let i = 0; i < squaresPerRow; i++) {
@@ -22,5 +23,28 @@ function drawSquareGrid(squaresPerRow) {
       row.appendChild(square);
     }
     container.appendChild(row);
+  }
+}
+
+function colorSquare(e) {
+  const target = e.target;
+  if (target.matches('.square')) {
+    const compStyle = window.getComputedStyle(target);
+
+    // Get the current background-color value:
+    const value = compStyle.backgroundColor;
+
+    // Get all color components (alpha may not be there if = 1):
+    const parts = value.match(/[\d.]+/g);
+
+    // If alpha is not there, add it:
+    if (parts.length === 3) {
+      parts.push(1);
+    }
+
+    // Modify alpha, prevent it go beyond 1 (fully opaque)
+    parts[3] = Math.min(1, parseFloat(parts[3]) + 0.10);
+
+    target.style.backgroundColor = `rgba(${ parts.join(',') })`;
   }
 }
