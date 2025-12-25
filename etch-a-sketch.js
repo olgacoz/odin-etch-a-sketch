@@ -9,20 +9,20 @@ const containerWidth = container.offsetWidth;
 let squareWidth = containerWidth / squaresPerRow;
 
 for (let i = 0; i < squaresPerRow; i++) {
-    // create a div with class row
-    const row = document.createElement('div');
-    row.classList.add('row');
+  // create a div with class row
+  const row = document.createElement('div');
+  row.classList.add('row');
 
-    for (let i = 0; i < squaresPerColumn; i++) {
-        // create a div with class square
-        const square = document.createElement('div');
-        square.classList.add('square');
+  for (let i = 0; i < squaresPerColumn; i++) {
+    // create a div with class square
+    const square = document.createElement('div');
+    square.classList.add('square');
 
-        // set the width and height of square
-        square.style.width = `${squareWidth}px`;
-        square.style.height = `${squareWidth}px`;
+    // set the width and height of square
+    square.style.width = `${squareWidth}px`;
+    square.style.height = `${squareWidth}px`;
 
-        row.appendChild(square);
-    }
-    container.appendChild(row);
+    row.appendChild(square);
+  }
+  container.appendChild(row);
 }
