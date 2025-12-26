@@ -8,7 +8,7 @@ container.addEventListener('mouseover', colorSquare);
 // change no of squares with user input
 const button = document.querySelector('button');
 button.addEventListener('click', () => {
-  const squaresPerRow = +prompt('Enter number of squares per side for the new grid');
+  const squaresPerRow = +prompt('How many squares per side?\nEnter an integer number between [2, 100]');
   if(Number.isInteger(squaresPerRow) &&
      squaresPerRow >= 2 && 
      squaresPerRow <= 100
@@ -49,6 +49,7 @@ function colorSquare(e) {
 
     // Get the current background-color value:
     const value = compStyle.backgroundColor;
+    consol
 
     // Get all color components (alpha may not be there if = 1):
     const parts = value.match(/[\d.]+/g);
