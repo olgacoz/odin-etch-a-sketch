@@ -16,7 +16,7 @@ button.addEventListener('click', () => {
     container.textContent = ''; // clean inside of container before putting new grid
     drawSquareGrid(squaresPerRow);
   } else {
-    alert('Please enter an integer number above 1 and below 100');
+    alert('Please enter an integer number between [2, 100]');
   }
 });
 
