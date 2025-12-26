@@ -2,7 +2,23 @@ const container = document.querySelector('#container');
 const containerWidth = container.offsetWidth; // get container width
 
 drawSquareGrid(16);
+
 container.addEventListener('mouseover', colorSquare);
+
+// change no of squares with user input
+const button = document.querySelector('button');
+button.addEventListener('click', () => {
+  const squaresPerRow = +prompt('Enter number of squares per side for the new grid');
+  if(Number.isInteger(squaresPerRow) &&
+     squaresPerRow >= 2 && 
+     squaresPerRow <= 100
+  ) {
+    container.textContent = ''; // clean inside of container before putting new grid
+    drawSquareGrid(squaresPerRow);
+  } else {
+    alert('Please enter an integer number above 1 and below 100');
+  }
+});
 
 function drawSquareGrid(squaresPerRow) {
   const squaresPerColumn = squaresPerRow;
