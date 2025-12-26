@@ -1,13 +1,13 @@
 const container = document.querySelector('#container');
 const containerWidth = container.offsetWidth; // get container width
+const changeNoOfSquaresBtn = document.querySelector('#change-no-of-squares');
 
 drawSquareGrid(16);
 
 container.addEventListener('mouseover', colorSquare);
 
 // change no of squares with user input
-const changeNoOfSquares = document.querySelector('button#change-no-of-squares');
-changeNoOfSquares.addEventListener('click', () => {
+changeNoOfSquaresBtn.addEventListener('click', () => {
   const squaresPerRow = +prompt('How many squares per side?\nEnter an integer number between [2, 100]');
   if(Number.isInteger(squaresPerRow) &&
      squaresPerRow >= 2 && 
