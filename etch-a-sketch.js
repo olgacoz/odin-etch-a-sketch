@@ -49,7 +49,6 @@ function colorSquare(e) {
 
     // Get the current background-color value:
     const value = compStyle.backgroundColor;
-    consol
 
     // Get all color components (alpha may not be there if = 1):
     const parts = value.match(/[\d.]+/g);
