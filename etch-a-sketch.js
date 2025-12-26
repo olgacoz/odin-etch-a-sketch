@@ -1,5 +1,5 @@
 const container = document.querySelector('#container');
-const containerWidth = container.offsetWidth; // get container width
+const containerWidth = container.clientWidth; // get container width
 const changeNoOfSquaresBtn = document.querySelector('#change-no-of-squares');
 
 drawSquareGrid(16);
