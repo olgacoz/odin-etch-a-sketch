@@ -1,10 +1,18 @@
 const container = document.querySelector('#container');
 const containerWidth = container.clientWidth; // get container width
 const changeNoOfSquaresBtn = document.querySelector('#change-no-of-squares');
+const clearBtn = document.querySelector('#clear');
 
-drawSquareGrid(16);
+let currentSquaresPerRow = 16;
+drawSquareGrid(currentSquaresPerRow);
 
 container.addEventListener('mouseover', colorSquare);
+
+// clear the grid
+clearBtn.addEventListener('click', () => {
+  container.textContent = '';
+  drawSquareGrid(currentSquaresPerRow);
+});
 
 // change no of squares with user input
 changeNoOfSquaresBtn.addEventListener('click', () => {
@@ -21,6 +29,7 @@ changeNoOfSquaresBtn.addEventListener('click', () => {
 });
 
 function drawSquareGrid(squaresPerRow) {
+  currentSquaresPerRow = squaresPerRow; // Update global tracker
   const squaresPerColumn = squaresPerRow;
   
   // find width and height of square
