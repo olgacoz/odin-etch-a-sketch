@@ -6,8 +6,8 @@ drawSquareGrid(16);
 container.addEventListener('mouseover', colorSquare);
 
 // change no of squares with user input
-const button = document.querySelector('button');
-button.addEventListener('click', () => {
+const changeNoOfSquares = document.querySelector('button#change-no-of-squares');
+changeNoOfSquares.addEventListener('click', () => {
   const squaresPerRow = +prompt('How many squares per side?\nEnter an integer number between [2, 100]');
   if(Number.isInteger(squaresPerRow) &&
      squaresPerRow >= 2 && 
