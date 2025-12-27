@@ -17,9 +17,9 @@ clearBtn.addEventListener('click', () => {
 // change no of squares with user input
 changeNoOfSquaresBtn.addEventListener('click', () => {
   const squaresPerRow = +prompt('How many squares per side?\nEnter an integer number between [2, 100]');
-  if(Number.isInteger(squaresPerRow) &&
-     squaresPerRow >= 2 && 
-     squaresPerRow <= 100
+  if (Number.isInteger(squaresPerRow) &&
+      squaresPerRow >= 2 && 
+      squaresPerRow <= 100
   ) {
     container.textContent = ''; // clean inside of container before putting new grid
     drawSquareGrid(squaresPerRow);
